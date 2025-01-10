@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nota Fiscal de Serviço</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body class="body-background">
+    <header>
+        <h1>Gerador de Nota Fiscal de Serviço</h1>
+    </header>
+
+    <main>
+        <div class="card-1">
+                <form id="notaFiscalForm">
+                        
+                    <div class="Valor-itens">
+                        <label for="valorVenda" class="margin-1">Valor da Venda:</label>
+                        <input type="number" id="valorVenda" class="margin-2" required step="0.01">
+                        
+                        <label for="itens" class="margin-1">Itens Vendidos (separados por vírgula):</label>
+                        <input type="text" id="itens" class="margin-2 margin-3" required>
+                    </div>
+                    
+                    <div class="impostos"> 
+                        <label for="irpf" class="margin-1">IRPF(%):</label>
+                        <input type="number" id="irpf" class="margin-2" required step="0.01">
+
+                        <label for="pis" class="margin-1">PIS(%):</label>
+                        <input type="number" id="pis" class="margin-2" required step="0.01">
+    
+                        <label for="cofins" class="margin-1">COFINS(%):</label>
+                        <input type="number" id="cofins" class="margin-2" required step="0.01">
+    
+                        <label for="inss" class="margin-1">INSS(%):</label>
+                        <input type="number" id="inss" class="margin-2" required step="0.01">
+    
+                        <label for="issqn" class="margin-1">ISSQN(%):</label>
+                        <input type="number" id="issqn" class="margin-2" required step="0.01">
+                    </div>
+                    
+                </form>
+
+    
+                <div class="card-2">
+                    <h2 class="card-header">Resultado</h2>
+                    <div id="resultado">
+                        <!-- A tabela estará aqui, mas inicialmente estará vazia -->
+                        <table>
+                            <tr>
+                                <td class="text-card"><strong>Itens Vendidos:</strong></td>
+                                <td class="text-card-result" id="itens-vendidos">-/-</td>
+                            </tr>
+                            <tr>
+                                <td class="text-card"><strong>Valor da Venda:</strong></td>
+                                <td class="text-card-result" id="valor-venda">-/-</td>
+                            </tr>
+                            <tr>
+                                <td class="text-card"><strong>IRPF:</strong></td>
+                                <td class="text-card-result" id="irpf">-/-</td>
+                            </tr>
+                            <tr>
+                                <td class="text-card"><strong>PIS:</strong></td>
+                                <td class="text-card-result" id="pis">-/-</td>
+                            </tr>
+                            <tr>
+                                <td class="text-card"><strong>COFINS:</strong></td>
+                                <td class="text-card-result" id="cofins">-/-</td>
+                            </tr>
+                            <tr>
+                                <td class="text-card"><strong>INSS:</strong></td>
+                                <td class="text-card-result" id="inss">-/-</td>
+                            </tr>
+                            <tr>
+                                <td class="text-card"><strong>ISSQN:</strong></td>
+                                <td class="text-card-result" id="issqn">-/-</td>
+                            </tr>
+                            <tr>
+                                <td><hr></td>
+                                <td><hr></td>
+                            </tr>
+                            <tr>
+                                <td class="text-card"><strong>Total de Impostos:</strong></td>
+                                <td class="text-card-result" id="total-impostos">-/-</td>
+                            </tr>
+                            <tr>
+                                <td class="text-card"><strong>Lucro:</strong></td>
+                                <td class="text-card-result" id="lucro">-/-</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="buttons-direction">
+                        <button type="button" id="calcular">Calcular</button>
+                        <button type="button" onclick="resetPage()">Resetar</button>
+                    </div>
+                </div>
+                
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
